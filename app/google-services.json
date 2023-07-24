@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "224770484678",
+    "firebase_url": "https://c2c-kotlin-default-rtdb.firebaseio.com",
+    "project_id": "c2c-kotlin",
+    "storage_bucket": "c2c-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224770484678:android:6b2dde53205fd63fa5aac7",
+        "android_client_info": {
+          "package_name": "com.example.teacher_kotlin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224770484678-l82jghr6lk2olqao90ddjjih54aa338p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm-ArlNZP9IvZcymkodxL9SwpSE19ggZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224770484678-l82jghr6lk2olqao90ddjjih54aa338p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
