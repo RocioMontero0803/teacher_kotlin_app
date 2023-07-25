@@ -21,9 +21,9 @@ class LogOut : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-            firebaseAuth.signOut()
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
+        firebaseAuth.signOut()
+        val intent = Intent(this, SignInActivity::class.java)
+        startActivity(intent)
 
         finish()
 
