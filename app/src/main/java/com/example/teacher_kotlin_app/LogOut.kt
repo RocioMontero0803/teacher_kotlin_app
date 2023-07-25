@@ -21,12 +21,10 @@ class LogOut : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.btnSignOutH.setOnClickListener {
             firebaseAuth.signOut()
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
 
-        }
         finish()
 
     }
