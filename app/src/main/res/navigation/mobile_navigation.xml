@@ -22,4 +22,9 @@
         android:name="com.example.teacher_kotlin_app.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.teacher_kotlin_app.SignInActivity"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/activity_sign_in" />
 </navigation>
