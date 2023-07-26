@@ -44,14 +44,15 @@ class Profile : Fragment() {
 
 
         //Change name on logo
+        val name1 = email.substringBefore("@")
 
-        val firstLetter = name.capitalize(Locale.ROOT) ?: ""
+        val firstLetter = name.capitalize(Locale.ROOT) ?: "S"
 
 
         //Change name to actual
 
         myTextView4 = view.findViewById(R.id.nameProfile)
-        myTextView4.text = "Name: Hello $name."
+        myTextView4.text = "Name: Hello $name1."
 
 
 
