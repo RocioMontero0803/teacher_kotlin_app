@@ -32,7 +32,6 @@ class PostFragment : Fragment() {
     var eventListener: ValueEventListener? = null
     private lateinit var dataList: ArrayList<DataClass>
     private lateinit var adapter: MyAdapter
-    private var imageUri: Uri? = null
     private lateinit var uid : String
     private lateinit var auth : FirebaseAuth
 
@@ -58,7 +57,6 @@ class PostFragment : Fragment() {
         adapter = activity?.let { MyAdapter(it, dataList) }!!
         binding.recyclerView.adapter = adapter
         databaseReference = FirebaseDatabase.getInstance().getReference("Posts")
-        //  dialog.show()
 
         eventListener = databaseReference!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -70,11 +68,9 @@ class PostFragment : Fragment() {
                     }
                 }
                 adapter.notifyDataSetChanged()
-                //   dialog.dismiss()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                //    dialog.dismiss()
             }
         })
 
@@ -83,15 +79,6 @@ class PostFragment : Fragment() {
             startActivity(intent)
         })
 
-//        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
-//        databaseReference!!.child(uid).child("status").get().addOnSuccessListener {
-//            Log.i("firebase", "Got role ${it.value}")
-//            if (it.value == "Student") {
-//                binding.fab.visibility = View.GONE
-//            }
-//        }.addOnFailureListener{
-//            Log.e("firebase", "Error getting data", it)
-//        }
 
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {

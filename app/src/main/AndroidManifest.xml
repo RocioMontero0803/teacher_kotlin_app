@@ -19,9 +19,6 @@
             android:name=".posts.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".posts.PostsActivity"
-            android:exported="false" />
-        <activity
             android:name=".posts.UploadActivity"
             android:exported="false" />
         <activity
