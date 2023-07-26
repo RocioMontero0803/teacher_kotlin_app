@@ -38,7 +38,6 @@
             tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/emailEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Welcome"
@@ -59,7 +58,7 @@
                 app:hintTextColor="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
+                    android:id="@+id/emailEt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textEmailAddress" />
