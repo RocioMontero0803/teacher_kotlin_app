@@ -22,9 +22,20 @@
         android:name="com.example.teacher_kotlin_app.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.teacher_kotlin_app.ui.profile.Profile"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_add"
+        android:name="com.example.teacher_kotlin_app.ui.add.Add"
+        android:label="@string/menu_add"
+        tools:layout="@layout/fragment_add" />
     <activity
         android:id="@+id/nav_logout"
         android:name="com.example.teacher_kotlin_app.SignInActivity"
         android:label="@string/menu_logout"
         tools:layout="@layout/activity_sign_in" />
+
 </navigation>
