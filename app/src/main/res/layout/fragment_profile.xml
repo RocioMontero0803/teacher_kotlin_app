@@ -83,6 +83,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/roleProfile"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/code2college_image"/>
     </RelativeLayout>
 
 

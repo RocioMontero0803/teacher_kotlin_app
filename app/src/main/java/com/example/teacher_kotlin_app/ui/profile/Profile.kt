@@ -44,7 +44,7 @@ class Profile : Fragment() {
 
 
         //Change name on logo
-        val name1 = email.substringBefore("@")
+        val name1 = email.substringBefore("@").capitalize()
 
         val firstLetter = name.capitalize(Locale.ROOT) ?: "S"
 
