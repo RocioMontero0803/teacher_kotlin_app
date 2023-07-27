@@ -47,6 +47,8 @@ class Profile : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
+        var name = ""
+
         btnChangeName = view.findViewById(R.id.btnChangeName)
         changeN = view.findViewById(R.id.changeName)
 
@@ -55,12 +57,10 @@ class Profile : Fragment() {
         mDbRef = FirebaseDatabase.getInstance().reference
 
         // Change name on logo
-        var name1 = email.substringBefore("@").capitalize()
-        val firstLetter = name.capitalize(Locale.ROOT) ?: "S"
+        nameGet()
 
         // Change name to actual
         myTextView4 = view.findViewById(R.id.nameProfile)
-        myTextView4.text = "Name: Hello $name1."
 
         // Change email to actual
         myTextView1 = view.findViewById(R.id.emailProfile)
@@ -95,6 +95,17 @@ class Profile : Fragment() {
         }
 
         return view
+    }
+
+    private fun nameGet() {
+        mDbRef.child("user").child(uid).child("name").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                name = (task.result?.value as? String).toString()
+                myTextView4.text = "Name: Hello $name."
+            } else {
+                Toast.makeText(requireContext(), "Error retrieving Data.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
