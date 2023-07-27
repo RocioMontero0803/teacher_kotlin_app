@@ -52,21 +52,22 @@ class Add : Fragment() {
         var newRole = "Student"
         var tr = false
 
-        if (role == "owner" || role == "teacher") {
-            tr = true
-        }
 
         changeTeacher.setOnClickListener {
             newRole = "Teacher"
-            Toast.makeText(requireContext(), "Change to: Student.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Change to: Teacher.", Toast.LENGTH_SHORT).show()
         }
 
         changeStudent.setOnClickListener {
             newRole = "Student"
-            Toast.makeText(requireContext(), "Change to: Teacher.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Change to: Student.", Toast.LENGTH_SHORT).show()
         }
 
         buttonAdd.setOnClickListener {
+            if (role == "owner" || role == "Teacher") {
+                tr = true
+            }
+
             if(tr){
                 change(newRole)
             } else {
