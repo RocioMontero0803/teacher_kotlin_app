@@ -2,9 +2,6 @@ package com.example.teacher_kotlin_app
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
-import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,8 +21,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
-    private lateinit var myTextView6: TextView
-    private lateinit var myTextView7: TextView
 
     companion object {
         var name: String = ""
@@ -71,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_post, R.id.nav_slideshow,R.id.nav_add, R.id.nav_logout,
+                R.id.nav_home, R.id.nav_post,R.id.nav_add, R.id.nav_logout,
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
