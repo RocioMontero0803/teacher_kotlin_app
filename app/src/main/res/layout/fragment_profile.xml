@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/text_box"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:text="Name:"
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
@@ -85,11 +85,41 @@
             app:layout_constraintGuide_begin="20dp" />
         
         <ImageView
+            android:id="@+id/lLogo"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_below="@id/roleProfile"
             android:layout_marginTop="100dp"
             android:src="@drawable/code2college_image"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/changeName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/text_box"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="20dp"
+            android:hint="New name:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_below="@id/lLogo" />
+
+        <Button
+            android:id="@+id/btnChangeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lLogo"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="15dp"
+            android:hint="Change name"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"/>
+
+
+
     </RelativeLayout>
 
 
