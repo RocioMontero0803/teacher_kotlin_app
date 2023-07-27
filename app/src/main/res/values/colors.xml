@@ -10,8 +10,8 @@
     <color name="purple">#8692f7</color>
     <color name="dark_blue">#00008B</color>
     <color name="blue_normal">#2196F3</color>
-    <color name="grey">#808080</color>
-
-
+    <color name="blue">#00aff0</color>
+    <color name="darkblue">#0e3b58</color>
+    <color name="grey">#A8A5A8</color>
 
 </resources>
