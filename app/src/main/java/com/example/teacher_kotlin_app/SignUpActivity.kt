@@ -25,7 +25,7 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-          binding.signInButton.setOnClickListener {
+        binding.signInButton.setOnClickListener {
               val intent = Intent(this, SignInActivity::class.java)
               startActivity(intent)
           }
