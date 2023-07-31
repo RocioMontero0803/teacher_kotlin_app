@@ -66,11 +66,11 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val headerView: View = navView.getHeaderView(0)
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        firebaseAuth = FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
         val userEmail: TextView = headerView.findViewById(R.id.headerEmail)
         if (user != null) {
-            firebaseAuth.currentUser?.let {
+            mAuth.currentUser?.let {
                 userEmail.text = it.email
             }
         }
