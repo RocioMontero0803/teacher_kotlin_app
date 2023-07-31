@@ -79,6 +79,16 @@ class PostFragment : Fragment() {
             startActivity(intent)
         })
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("user")
+        databaseReference!!.child(uid).child("role").get().addOnSuccessListener {
+            Log.i("firebase", "Got role ${it.value}")
+            if (it.value == ("Student")|| it.value == ("student") ){
+                binding.fab.visibility = View.GONE
+            }
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+
 
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {

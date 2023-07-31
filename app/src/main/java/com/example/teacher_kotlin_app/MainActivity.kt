@@ -22,8 +22,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var mDbRef: DatabaseReference
 
+    companion object {
+        var name: String = ""
+        var email: String = ""
+        var uid: String = ""
+        var role: String = ""
+
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,6 +41,27 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        mAuth = FirebaseAuth.getInstance()
+        mDbRef = FirebaseDatabase.getInstance().reference
+
+
+        val user = mAuth.currentUser
+
+        mDbRef.child("user").child(uid).child("name").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                name = (task.result?.value as? String).toString()
+            }
+        }
+
+        email = user?.email ?: ""
+        uid = user?.uid ?:""
+        mDbRef.child("user").child(uid).child("role").get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                role = (task.result?.value as? String).toString()
+            }
+        }
+
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val headerView: View = navView.getHeaderView(0)
@@ -39,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         val userEmail: TextView = headerView.findViewById(R.id.headerEmail)
-        if (firebaseAuth.currentUser != null) {
+        if (user != null) {
             firebaseAuth.currentUser?.let {
                 userEmail.text = it.email
             }
@@ -49,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_post, R.id.nav_slideshow, R.id.nav_logout
+                R.id.nav_home, R.id.nav_post,R.id.nav_add, R.id.nav_logout,
             ), drawerLayout
         )
 
@@ -67,4 +97,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

@@ -108,7 +108,7 @@
         android:paddingHorizontal="70dp">
 
         <Button
-            android:id="@+id/textView"
+            android:id="@+id/SignBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/blue"
